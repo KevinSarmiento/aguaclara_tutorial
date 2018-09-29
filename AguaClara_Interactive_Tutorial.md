@@ -103,15 +103,41 @@ print(myArray)
 $$ D = \frac{k_BT}{6\pi\eta r} $$
 
 ```python
+import numpy as np
 from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
 
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
-
+T= 273*u.kelvin
+eta= 1*u.kg/(u.m*u.s)
+r=0.001*u.m
+D= (kB*T)/(6*np.pi*eta*r)
+print(D)
 # Write your code here
 
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
+
+```python
+from aide_design.play import*
+t_array= np.arange(0,200)*u.degC
+r=0.2*u.m
+q= 2*(u.m**3/u.s)
+rho_array = pc.viscosity_kinematic(t_array)
+plt.plot(t_array, rho_array)
+plt.title("Temperature effect on Reynolds Numbers")
+plt.xlabel("Temperature (K)")
+plt.ylabel("Reynold Number")
+plt.tight_layout()
+plt.savefig('./Images/Temp_Reynold.jpg')
+plt.show()
+![TemperaturevsReynoldsNumbers](/Images/Temp_Reynold.jpg)
+
+
+
+
+```
+
 
 <!--- Fill you answer here. --->
 
