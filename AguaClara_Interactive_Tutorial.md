@@ -31,6 +31,18 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 1. Write a conditional statement with 3 conditions: when x is 10, when x is 1, and when x is anything other than 1 or 10. For each condition, have your code print what the value is or isn't.
 
+```python
+x=2
+if x == 1:
+  print('x is equal to 1 and not 10')
+elif x == 10:
+  print('x is equal to 10 and not 1')
+elif x != 1 or 10:
+  print('x is equal to '+str(x))
+
+
+
+```
 <!--- Fill you answer here. --->
 
 
@@ -38,6 +50,12 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
+```Python
+x=0
+for i in range(20):
+  x +=i
+print(x)
+```
 <!--- Fill you answer here. --->
 
 
@@ -50,11 +68,23 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 3. Using the NumPy package and `unit_registry`, calculate the value of sin(4) meters, and use the sigfig function from the unit unit_registry module in aide_design to get your answer to 2 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
 
+```python
+import numpy as np
+from aide_design.play import*
+
+x=np.sin(4)*u.m
+print (x)
+
+```
 <!--- Fill you answer here. --->
 
 
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
+
+list=[1,2,3,4,5]
+
+
 
 <!--- Fill you answer here. --->
 
