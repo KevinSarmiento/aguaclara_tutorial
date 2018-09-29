@@ -82,17 +82,15 @@ print (x)
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
 
+```python
 list=[1,2,3,4,5]
-
+len(list)
+myArray = np.array(list)
+print(myArray)
+```
 
 
 <!--- Fill you answer here. --->
-
-
-
-
-
-
 
 
 
